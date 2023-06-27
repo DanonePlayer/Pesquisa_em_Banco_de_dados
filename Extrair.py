@@ -51,7 +51,7 @@ def Gerar_Dados():
 def cria_Banco():
     import sqlite3
 
-    conn = sqlite3.connect('Arquivos_Presos.db')
+    conn = sqlite3.connect('Arquivos.db')
 
 
     cursor = conn.cursor()
@@ -59,7 +59,7 @@ def cria_Banco():
 
 
     # criando a tabela (schema)
-    cursor.execute(""" CREATE TABLE Arquivos_Presos (
+    cursor.execute(""" CREATE TABLE Arquivos (
             id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
             nome TEXT NOT NULL,
             Sexo VARCHAR(9) NOT NULL,
@@ -163,7 +163,7 @@ def escreve_para_exel():
         
         elems = [vetor.split("-")[0], vetor.split("-")[1], vetor.split("-")[2], vetor.split("-")[3], vetor.split("-")[4], vetor.split("-")[5], vetor.split("-")[6], vetor.split("-")[7]]
         texto_a_ser_inserido = ("	".join(elems))
-        with open("Dados_Tarauacá.txt", "a", encoding = "UTF-8") as arquivo:
+        with open("Dados.txt", "a", encoding = "UTF-8") as arquivo:
             arquivo.write("\n")
             arquivo.write(texto_a_ser_inserido)
 
